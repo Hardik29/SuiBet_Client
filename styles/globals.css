@@ -1,7 +1,51 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  @apply no-scrollbar;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.scrollbar::-webkit-scrollbar {
+  width: 4px; /*  firefox has it hardset to 8px so need to use this value for consitency */
+  height: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+  border-radius: 999px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #2af1ff;
+  border-radius: 999px;
+  width: 12px;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-color: #2af1ff transparent; /* Firefox */
+  scrollbar-width: thin; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,12 +60,4 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+
