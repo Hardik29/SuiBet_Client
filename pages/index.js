@@ -42,7 +42,7 @@ export default function Home() {
           <div className='flex flex-row space-x-10 justify-center overflow-x-scroll pb-10 no-scrollbar pl-[34rem] pr-6'>
             {
               allBets && allBets.map((item) => (
-                <div className='snap-center hover:drop-shadow-xl' key={index}><BetCard desc={item.bet_description} buttonA={item.bet_team1} buttonB={item.bet_team2} betName={item.bet_name}/></div>
+                <div className='snap-center hover:drop-shadow-xl' key={item}><BetCard desc={item.bet_description} buttonA={item.bet_team1} buttonB={item.bet_team2} betName={item.bet_name}/></div>
               ))
             }
           </div>
