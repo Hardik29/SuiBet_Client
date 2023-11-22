@@ -23,7 +23,6 @@ export default function Home() {
 
   return (
     <div className='bg-gradient-to-r from-rose-100 to-teal-100 h-screen'>
-      {console.log(allBets)}
       <div className='text-gray-300 pt-36'>
         <div className='text-xl flex flex-row justify-between items-center text-black'>
           <div className='ml-10'>
